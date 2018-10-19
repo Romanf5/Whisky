@@ -1,0 +1,267 @@
+.nav-list {
+  .clearlist();
+  display: flex;
+  align-items: center;
+
+  > li {
+    padding: 0 13px;
+
+    .max-width(@screen-1440, {
+      padding:0 9px;
+    });
+
+    .max-width(@screen-1366, {
+      padding: 0 5px;
+    });
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    > a {
+      display: block;
+      color: @first-color;
+      font-size: 13px;
+      font-family: @menu-font;
+      font-weight: @menu-font-weigth;
+      text-transform: uppercase;
+
+      .max-width(@screen-1366, {
+        font-size: 11px;
+      });
+    }
+  }
+
+  .max-width(@hd-plus, {
+    justify-content: space-between;
+  });
+}
+
+.additional-menu {
+  margin-right: 40px;
+
+  .max-width(@hd-plus, {
+    margin-right: 20px;
+  });
+
+  .max-width(@screen-1366, {
+    max-width: 470px;
+    width: 100%;
+  });
+
+  .max-width(1130px, {
+    margin-right: 5px;
+  });
+
+  .max-width(1092px,{
+    margin-top: 40px;
+  });
+
+  .max-width(@screen-xs,{
+    margin-top: 20px;
+  });
+
+  &__list {
+    .max-width(1092px,{
+      display: block;
+    });
+
+    > li {
+      padding: 0 10px;
+
+      .max-width(@screen-1440, {
+        padding:0 9px;
+      });
+
+      .max-width(@screen-1366, {
+        padding: 0 5px;
+      });
+
+      .max-width(1092px,{
+        padding: 0;
+        margin-bottom: 15px;
+      });
+
+      > a {
+        display: inline-block;
+
+        .max-width(1092px,{
+          font-size: 18px;
+        });
+      }
+    }
+  }
+}
+
+.main-nav {
+  &__list {
+    .max-width(1092px,{
+    display: block;
+    });
+
+    > li {
+
+      .max-width(1092px,{
+        padding: 0;
+        margin-bottom: 15px;
+      });
+
+      > a {
+        position: relative;
+        overflow: hidden;
+
+        .max-width(1092px,{
+          font-size: 18px;
+        });
+
+        &:after {
+          content: '';
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 100%;
+          background-color: @btn-text-color;
+          transition: left, right 0.3s ease-in-out;
+
+          .max-width(1092px,{
+            display: none;
+          });
+        }
+
+        &:hover {
+          &:after {
+            right: 0
+          }
+        }
+      }
+
+      &.current-menu-item {
+        > a {
+          .max-width(1092px,{
+            color: @btn-border-color;
+          });
+
+          &:after {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.social-header {
+  display: flex;
+  .clearlist();
+
+  .max-width(1092px,{
+    margin-top: 30px;
+  });
+
+  > li {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    > a {
+      color: @first-color;
+
+      .max-width(1092px,{
+        font-size: 25px;
+        margin-right: 15px;
+      });
+    }
+
+    .max-width(@screen-1440,{
+      padding-left: 5px;
+      padding-right: 5px;
+    });
+
+    .max-width(@screen-1366,{
+      padding-left: 12px;
+      padding-right: 12px;
+    });
+
+    .max-width(@screen-xl,{
+      padding-left: 3px;
+      padding-right: 3px;
+    });
+  }
+}
+
+.footer-nav {
+  margin-bottom: 33px;
+  position: relative;
+  z-index: 3;
+
+  &__list {
+    justify-content: center;
+
+    .max-width(@screen-lg, {
+      display: block;
+    column-count: 2;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    });
+
+    >li{
+      .max-width(@screen-lg, {
+        padding: 0;
+      });
+    }
+  }
+}
+
+.footer-social {
+  text-align: center;
+
+  .clearlist();
+
+  &__item {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    > a {
+      display: inline-block;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border: 2px solid @btn-border-color;
+      border-radius: 50%;
+
+      > i {
+        position: absolute;
+        font-size: 24px;
+        color: @first-color;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

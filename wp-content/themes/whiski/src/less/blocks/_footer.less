@@ -1,0 +1,118 @@
+.page-footer {
+  position: relative;
+
+  &__copyright {
+    font-size: 13px;
+    font-weight: @normal;
+
+    .max-width(@screen-mobile, {
+      flex-direction: column;
+    text-align: center;
+    });
+
+    p {
+      .max-width(@screen-mobile, {
+        margin: 5px 0;
+      });
+    }
+  }
+
+  &__navigation{
+    max-width: 1035px;
+    margin: 0 auto;
+  }
+}
+
+.subscribe{
+  padding: 75px 0;
+  background: url('../../src/images/subscribe.png') no-repeat center/cover;
+  text-align: center;
+  position: relative;
+
+    .max-width(@screen-lg, {
+      padding: 60px 0;
+    });
+
+  .max-width(@screen-mobile, {
+    padding: 40px 0;
+  });
+
+  &__title{
+    display: flex;
+    justify-content: center;
+
+    .icon{
+      margin-left: 10px;
+    }
+  }
+
+  &__form{
+    max-width: 916px;
+    margin: 24px auto 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+
+    .wpcf7-validation-errors{
+      display: none !important;
+    }
+
+    .wpcf7-mail-sent-ok{
+      position: absolute;
+      color: @first-color;
+      top: 115%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+
+      .max-width(@screen-md,{
+        top: 100%;
+        left: 15px;
+        right: 15px;
+        transform: translateX(0);
+      });
+
+      .max-width(@screen-mobile, {
+        position: static;
+      });
+    }
+  }
+}
+
+.navigation-wrp{
+  padding: 59px 0;
+  background-color: @secondary-color;
+  position: relative;
+
+  .max-width(@screen-lg, {
+    padding: 10px 0;
+  });
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    max-width: 284px;
+    height: 230px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+
+    .max-width(@screen-md, {
+      display: none;
+    });
+  }
+
+  &:before {
+    background: url('../../src/images/footer-decore-left.png') no-repeat center/cover;
+    left: 0;
+    right: auto;
+  }
+
+  &:after {
+    background: url('../../src/images/footer-decore-right.png') no-repeat center/cover;
+    right: 0;
+    left: auto;
+  }
+}

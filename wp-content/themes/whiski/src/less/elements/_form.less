@@ -1,0 +1,205 @@
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+}
+
+.form-row {
+  margin: 0 -15px;
+  display: flex;
+
+  .max-width(768px,{
+  flex-wrap: wrap;
+
+  input {
+    max-width: 369px;
+  }
+  });
+
+  &__col {
+    padding: 0 15px;
+    width: 25%;
+
+    .max-width(768px,{
+      width: 100%;
+      margin-bottom: 15px;
+    });
+
+    > label {
+      display: inline-block;
+      width: 100%;
+
+      input {
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        outline: none;
+        padding: 15px;
+        color: @first-color;
+        font-weight: @semibold;
+        transition: 0.3s;
+
+        &::placeholder{
+          color: @first-color;
+          font-weight: @semibold;
+          transition: .3s ease-in;
+          transform-origin: left;
+          opacity: 1;
+        }
+
+        &:focus {
+          &::placeholder{
+            transform: scale(0);
+            opacity: 0;
+          }
+        }
+
+        &.wpcf7-not-valid {
+          border-color: @btn-border-color;
+        }
+      }
+
+      > span {
+        display: inline-block;
+      }
+
+      > br {
+        display: none;
+      }
+    }
+  }
+}
+
+.ajax-loader {
+  display: none !important;
+}
+
+.mc4wp-checkbox-contact-form-7 {
+  color: @first-color;
+  font-weight: @normal;
+  display: inline-block;
+  margin-bottom: 10px;
+
+  > label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      margin: 10px 0 0 20px;
+
+      &:checked {
+        & + span:after {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 34px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      transition: .2s;
+      border: 1px solid @first-color;
+    }
+
+    &:after {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 Pro', sans-serif;
+      position: absolute;
+      top: -3px;
+      left: 4px;
+      display: none;
+    }
+  }
+}
+
+.wpcf7-submit:extend(.btn all) {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  padding: 17px 10px;
+  outline: none;
+
+  .max-width(768px,{
+    max-width: 369px;
+  });
+
+  &:hover {
+    border: none;
+    color: @btn-border-color;
+  }
+}
+
+span.wpcf7-not-valid-tip {
+  display: none;
+}
+
+.contact-page {
+  &__form {
+    label {
+      font-weight: @semibold;
+      display: block;
+
+      .rq {
+        color: @btn-border-color;
+      }
+
+      .wpcf7-form-control-wrap {
+        display: block;
+
+        textarea,input {
+          border: 1px solid #bfbfbf;
+          margin-top: 10px;
+
+          &:focus {
+            outline: none;
+          }
+
+          &.wpcf7-not-valid{
+            border-color: @btn-border-color;
+          }
+        }
+
+        input {
+          height: 54px;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        textarea {
+          width: 100%;
+          resize: none;
+          padding: 15px;
+          height: 167px;
+          margin-bottom: 15px;
+          .max-width(@screen-md,{
+            margin-bottom: 0;
+          });
+        }
+      }
+
+    }
+
+    input[type="submit"] {
+      width: 180px;
+      background-color: @btn-border-color;
+      color: @first-color;
+    }
+  }
+
+  .wpcf7-validation-errors{
+    display: none !important;
+  }
+}

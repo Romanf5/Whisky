@@ -1,0 +1,12 @@
+app/css/*.css
+app/css/*.css.map
+app/script/*.js
+app/script/*.js.map
+
+node_modules/
+bower_components/
+_arc/
+.idea
+.DS_Store
+yarn.lock
+.Saved/

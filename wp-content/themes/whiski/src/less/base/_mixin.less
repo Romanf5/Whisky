@@ -1,0 +1,33 @@
+.fluid-type(@property, @min-vw, @max-vw, @min-size, @max-size) {
+
+    @{property}: @min-size;
+
+  @media screen and (min-width: @min-vw) {
+      @{property}: calc( @min-size ~" + " unit(@max-size - @min-size) ~" * ((100vw - " @min-vw ~") /" unit(@max-vw - @min-vw) ~")" );
+  }
+
+  @media screen and (min-width: @max-vw) {
+      @{property}: @max-size;
+  }
+
+}
+
+.max-width(@maxWidth; @rules) {
+  @media only screen and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+
+.min-width(@minWidth; @rules) {
+  @media only screen and (min-width: @minWidth) {
+    @rules();
+  }
+}
+
+
+.clearlist(){
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}

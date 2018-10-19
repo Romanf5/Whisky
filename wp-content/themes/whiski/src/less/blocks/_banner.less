@@ -1,0 +1,52 @@
+.banner {
+  position: relative;
+  padding-top: 190px;
+  background-position-y: -52px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .max-width(@screen-mobile, {
+    background-position: center;
+  });
+
+  &--front {
+    padding-top: 210px;
+    padding-bottom: 212px;
+    background-position: center;
+
+    .max-width(@screen-1440, {
+      padding-top: 198px;
+      padding-bottom: 190px;
+    });
+
+    .max-width(@screen-lg, {
+      padding-top: 170px;
+      padding-bottom: 170px;
+    });
+
+    .max-width(@screen-md, {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    });
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    color: @first-color;
+    .fluid-type(font-size, 320px, 1800, 15px, 19px);
+    line-height: 31px;
+    max-width: 500px;
+    margin: 0;
+
+    .max-width(@screen-md,{
+      line-height: 20px;
+    })
+  }
+
+  .max-width(@tablet-landscape, {
+    margin-top: 60px;
+  });
+}

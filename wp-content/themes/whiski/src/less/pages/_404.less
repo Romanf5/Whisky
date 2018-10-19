@@ -1,0 +1,73 @@
+.error-404 {
+  padding-top: 170px;
+  padding-bottom: 140px;
+  text-align: center;
+  position: relative;
+
+  .max-width(@screen-1440,{
+    padding-top: 88px;
+    padding-bottom: 107px;
+  });
+
+  .max-width(@screen-lg,{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  });
+
+  .max-width(@screen-mobile,{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  });
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 242px;
+    height: 429px;
+
+    .max-width(@screen-mobile,{
+      display: none;
+    });
+  }
+
+  &:after {
+    background: url('../../src/images/contact-left.png') no-repeat center/cover;
+    left: 0;
+  }
+
+  &:before {
+    background: url('../../src/images/contact-right.png') no-repeat center/cover;
+    right: 0;
+  }
+}
+
+.title-404 {
+  font-family: @title-font;
+  text-transform: uppercase;
+  font-weight: @title-font-weight;
+  color: @btn-border-color;
+  font-size: 206px;
+  line-height: 1;
+  margin: 0 0 50px 0;
+
+  .max-width(@screen-md,{
+    font-size: 150px;
+  });
+
+}
+
+.description-404 {
+  font-family: @title-font;
+  text-transform: uppercase;
+  font-weight: @title-font-weight;
+  color: @btn-border-color;
+  font-size: 33px;
+  line-height: 1;
+  margin: 0;
+
+  .max-width(@screen-mobile,{
+    font-size: 26px;
+  });
+}

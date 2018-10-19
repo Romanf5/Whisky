@@ -1,0 +1,52 @@
+.title {
+  font-family: @title-font;
+  .fluid-type(font-size, 320px, 1800px, 16px, 19px);
+  color: @title-color;
+  font-weight: @title-font-weight;
+  margin-top: 0;
+  max-width: 825px;
+  line-height: 28px;
+  text-transform: uppercase;
+
+  &--large{
+    .fluid-type(font-size, 320px, 1800px, 28px, 64px);
+    .fluid-type(line-height, 320px, 1800px, 35px, 70px);
+    letter-spacing: 0.55px;
+  }
+
+  &--medium{
+    .fluid-type(font-size, 320px, 1800px, 26px, 43px);
+    font-weight: @bold;
+    .fluid-type(line-height, 320px, 1800px, 35px, 51px);
+    letter-spacing: 0.25px;
+  }
+
+  &--white{
+    color: @first-color;
+  }
+
+  &--center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--semibold{
+    font-weight: @semibold;
+  }
+
+  &--single-post{
+    font-size: 26px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    .max-width(@screen-1440, {
+      font-size: 24px;
+      margin-bottom: 25px;
+    });
+
+    .max-width(@screen-sm, {
+      font-size: 22px;
+    });
+  }
+}
